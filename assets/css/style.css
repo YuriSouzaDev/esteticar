@@ -6,7 +6,14 @@
 
 /* Imports */
 
+/* Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 /* Resets */
 *,
@@ -40,6 +47,7 @@ body {
   position: fixed;
   padding: 0 1.25rem;
   padding-top: 1.25rem;
+  z-index: 999;
 }
 
 .header {
@@ -123,6 +131,76 @@ body {
 
 .menu-hamburger .hamb-3 {
   transform-origin: right;
+}
+
+/* intro */
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-height: 860px;
+  width: 100%;
+}
+
+.intro-text {
+  position: static;
+  width: 100%;
+  padding: 160px 20px 60px 20px;
+  background: var(--white);
+  max-width: 68.75rem;
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25), 0px 4px var(--primary-color);
+  z-index: 2;
+}
+
+.intro-text p {
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.47px;
+  color: var(--primary-color);
+  margin-left: 3px;
+  margin-bottom: 10px;
+}
+
+.intro-text h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: 0.616px;
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.intro-text h1 span {
+  color: var(--primary-color);
+}
+
+.whatsapp-list {
+  display: flex;
+  gap: 12px;
+}
+
+.whatsapp-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: Roboto;
+}
+
+.slide-wrapper {
+  width: 100%;
+}
+
+/* Slide container */
+.slide-wrapper img {
+  /* object-fit: contain; */
+  width: 100%;
+  max-height: 260px;
 }
 
 /* Media Query */
