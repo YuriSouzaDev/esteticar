@@ -34,6 +34,11 @@ a {
   display: block;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 /* General */
 
 body {
@@ -140,22 +145,28 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  max-height: 860px;
   width: 100%;
+  background: var(--white);
+}
+
+.intro-text-bg {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25), 0px 4px 0px var(--primary-color);
+  width: 100%;
+  position: static;
+  z-index: 2;
 }
 
 .intro-text {
-  position: static;
   width: 100%;
   padding: 160px 20px 60px 20px;
   background: var(--white);
   max-width: 68.75rem;
-  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25), 0px 4px var(--primary-color);
-  z-index: 2;
 }
 
 .intro-text p {
-  font-size: 0.875rem;
+  font-size: 0.7rem;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1.47px;
@@ -186,29 +197,64 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   color: var(--black);
   font-size: 0.75rem;
-  font-weight: 500;
-  font-family: Roboto;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
 }
 
+.whatsapp-list a img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Slide container */
 .slide-wrapper {
   width: 100%;
 }
 
-/* Slide container */
 .slide-wrapper img {
-  /* object-fit: contain; */
-  width: 100%;
+  object-fit: cover;
   max-height: 260px;
 }
 
 /* Media Query */
 
+/* Para telas de aparelhos menores que o padrão inicial do projeto */
+@media (max-width: 380px) {
+  .intro-text p,
+  .whatsapp-list a {
+    font-size: 0.7rem;
+  }
+}
+
 @media (min-width: 481px) {
+  .intro-text p {
+    font-size: 0.875rem;
+  }
+
+  .intro-text h1 {
+    font-size: 4rem;
+    max-width: 15ch;
+  }
+
+  .whatsapp-list a {
+    font-size: 1rem;
+  }
+
+  .slide {
+    max-height: 600px;
+    overflow: hidden;
+  }
+
+  .slide img {
+    max-height: 600px;
+  }
 }
 
 @media (min-width: 992px) {
+  /* header */
   .nav {
     position: unset;
   }
@@ -234,7 +280,24 @@ body {
   .menu-hamburger {
     display: none;
   }
+
+  /* intro */
+  .intro-text {
+    padding-left: 20px;
+  }
 }
 
 @media (min-width: 1200px) {
+  .intro-text {
+    padding: 200px 0 120px 0;
+  }
+
+  .intro-text h1 {
+    max-width: max-content;
+  }
+
+  .slide img {
+    object-fit: cover;
+    max-height: 1300px;
+  }
 }
