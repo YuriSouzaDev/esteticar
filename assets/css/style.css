@@ -49,10 +49,11 @@ body {
 
 .header-container {
   width: 100%;
-  position: fixed;
   padding: 0 1.25rem;
   padding-top: 1.25rem;
   z-index: 999;
+  background: var(--white);
+  position: relative;
 }
 
 .header {
@@ -62,29 +63,32 @@ body {
   max-width: 68.75rem;
   max-height: 5.5rem;
   background: var(--black);
-  padding: 1.25rem 1.25rem 0 1.25rem;
+  padding: 1.25rem;
   border-radius: 0.5rem;
   margin: 0 auto;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
   position: relative;
 }
 
-.logo {
-  padding: 2rem 0 2rem 0;
-}
-
 /* menu */
 .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  right: -150%;
+  right: -100%;
   top: 90%;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
   background: var(--black);
   border-radius: 0 0 0.5rem 0.5rem;
+  width: 100%;
+  height: 250px;
+  opacity: 0;
 }
 
 .nav.active {
   right: 0;
+  opacity: 1;
 }
 
 .nav ul {
@@ -92,11 +96,13 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1.25rem;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
 .nav ul a {
   font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* menu-hamburger */
@@ -138,6 +144,11 @@ body {
   transform-origin: right;
 }
 
+.blur {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
 /* intro */
 
 .intro {
@@ -160,7 +171,7 @@ body {
 
 .intro-text {
   width: 100%;
-  padding: 160px 20px 60px 20px;
+  padding: 40px 20px 60px 20px;
   background: var(--white);
   max-width: 68.75rem;
 }
@@ -255,6 +266,10 @@ body {
 
 @media (min-width: 992px) {
   /* header */
+
+  .header {
+    padding: 1.25rem 1.25rem 0 1.25rem;
+  }
   .nav {
     position: unset;
   }
@@ -288,8 +303,14 @@ body {
 }
 
 @media (min-width: 1200px) {
+  .nav {
+    height: 100%;
+    justify-content: flex-end;
+    opacity: 1;
+  }
+
   .intro-text {
-    padding: 200px 0 120px 0;
+    padding: 60px 0 80px 0;
   }
 
   .intro-text h1 {

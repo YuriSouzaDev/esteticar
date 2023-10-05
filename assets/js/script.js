@@ -3,10 +3,14 @@ function initMenuHamburger() {
   // Mostra ou esconde o menu mobile
   const menuHamburger = document.querySelector("[data-hamb]");
   const menuNav = document.querySelector("[data-nav]");
+  const blur = document.querySelectorAll("[data-blur]");
 
   function openMenu() {
     menuNav.classList.toggle("active");
     menuHamburger.classList.toggle("active");
+    blur.forEach((item) => {
+      item.classList.toggle("blur");
+    });
   }
 
   // Verifica se o icone existe
