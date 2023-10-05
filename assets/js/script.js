@@ -13,7 +13,7 @@ function initMenuHamburger() {
     });
   }
 
-  // Verifica se o icone existe
+  // Verifica se o icone existe e aciona o evento
   if (menuHamburger) {
     menuHamburger.addEventListener("click", openMenu);
   }

@@ -45,6 +45,11 @@ body {
   height: 3000px;
 }
 
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
 /* Header */
 
 .header-container {
@@ -74,46 +79,40 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-bottom: 10px;
-}
-
-.logo {
-  height: 100%;
 }
 
 /* menu */
+nav {
+  width: 100%;
+}
+
 .nav {
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 1.25rem;
+  gap: 2rem;
+  justify-content: center;
   position: absolute;
-  right: -100%;
-  top: 90%;
-  transition: all 0.3s ease;
+  right: -150%;
+  top: 85%;
+  transition: all 0.5s ease;
   background: var(--black);
   border-radius: 0 0 0.5rem 0.5rem;
   width: 100%;
-  height: 250px;
+  height: 280px;
   opacity: 0;
-  display: none;
   z-index: 999;
+  overflow-y: auto;
 }
 
 .nav.active {
-  display: flex;
-  right: 0;
+  right: 0px;
   opacity: 1;
+  position: absolute;
 }
 
-.nav ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.25rem;
-  gap: 2rem;
-}
-
-.nav ul a {
+.nav li a {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -284,6 +283,10 @@ body {
     padding: 1.25rem 1.25rem 0 1.25rem;
   }
 
+  .logo {
+    margin-bottom: 10px;
+  }
+
   .nav {
     position: unset;
     display: flex;
@@ -292,14 +295,14 @@ body {
     justify-content: flex-end;
   }
 
-  .nav ul {
+  .nav {
     display: flex;
     flex-direction: row;
     padding: 0;
     gap: 2.5rem;
   }
 
-  .nav ul a {
+  .nav li a {
     font-weight: 600;
     font-size: 0.75rem;
     padding: 1rem 0 2.1rem 0;
@@ -307,7 +310,7 @@ body {
     transition: 0.3s;
   }
 
-  .nav ul li:hover a {
+  .nav li:hover a {
     border-bottom: 0.25rem solid var(--primary-color);
   }
   .menu-hamburger {
@@ -321,9 +324,6 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .nav {
-  }
-
   .intro-text {
     padding: 60px 0 80px 0;
   }
