@@ -3,15 +3,31 @@ function initMenuHamburger() {
   // Mostra ou esconde o menu mobile
   const menuHamburger = document.querySelector("[data-hamb]");
   const menuNav = document.querySelector("[data-nav]");
-  const blur = document.querySelectorAll("[data-blur]");
+  const overlay = document.querySelector(".overlay");
+  let isOverlayVisible = false;
 
   function openMenu() {
     menuNav.classList.toggle("active");
     menuHamburger.classList.toggle("active");
-    blur.forEach((item) => {
-      item.classList.toggle("blur");
-    });
+
+    // Efeito de escurecimento da camada
+    if (isOverlayVisible) {
+      overlay.style.display = "none";
+    } else {
+      overlay.style.display = "block";
+    }
+
+    // Inverte o estado da camada de escurecimento
+    isOverlayVisible = !isOverlayVisible;
   }
+
+  // Fecha o menu ao clicar fora do menu mobile
+  overlay.addEventListener("click", () => {
+    menuNav.classList.remove("active");
+    menuHamburger.classList.remove("active");
+    overlay.style.display = "none";
+    isOverlayVisible = false;
+  });
 
   // Verifica se o icone existe e aciona o evento
   if (menuHamburger) {
