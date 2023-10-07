@@ -3,6 +3,11 @@
   --white: #ffffff;
   --light-gray: #f1f1f1;
   --primary-color: #ff0100;
+  --gradient-color: linear-gradient(
+    180deg,
+    rgba(31, 31, 31, 0.6) 0%,
+    #1f1f1f 100%
+  );
 }
 
 /* Imports */
@@ -15,6 +20,18 @@
 
 /* Roboto */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+/* Playfair */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
+
+/* Gilroy */
+@font-face {
+  font-family: "Gilroy";
+  src: local(Gilroy), url("../fonts/Gilroy-Regular.ttf"),
+    ("../fonts/Gilroy-Medium.ttf"),
+    ("../fonts/Gilroy-Semibold.ttf") format("opentype");
+  font-weight: normal;
+}
 
 /* Resets */
 *,
@@ -261,6 +278,7 @@ nav {
     var(--primary-color) 50%,
     var(--light-gray) 50%
   );
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
 .services-text {
@@ -369,6 +387,51 @@ nav {
   background: red;
 }
 
+/* Parallax */
+
+.parallax {
+  background: var(--gradient-color), url(../img/photos/parallax.jpeg),
+    lightgray 0px -83.041px / 100% 130.833% no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll, fixed;
+  background-size: auto, cover;
+  background-position: 0 0, 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50vh;
+  padding: 0 20px;
+}
+
+.parallax-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-text p {
+  font-size: 1rem;
+  font-family: "Gilroy", serif;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.parallax a {
+  font-size: 0.875rem;
+  text-align: center;
+  font-family: "Gilroy", serif;
+  padding: 16px 16px 14px 16px;
+  border: 2px solid var(--light-gray);
+  width: max-content;
+}
+
 /* Media Query */
 
 /* Para telas de aparelhos menores que o padrão inicial do projeto */
@@ -416,6 +479,16 @@ nav {
 
   .services-text h2 {
     font-size: 3rem;
+  }
+
+  /* Parallax */
+
+  .parallax-text p {
+    font-size: 2rem;
+  }
+
+  .parallax a {
+    font-size: 1.5rem;
   }
 }
 
@@ -513,6 +586,21 @@ nav {
     max-width: 68.75rem;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Parallax */
+
+  .parallax {
+    height: 60vh;
+  }
+
+  .parallax-text p {
+    font-size: 2.5rem;
+    max-width: 40ch;
+  }
+
+  .parallax a {
+    font-size: 2rem;
   }
 }
 
