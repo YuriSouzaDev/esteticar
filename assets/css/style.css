@@ -1,6 +1,7 @@
 :root {
   --black: #121212;
-  --white: #f1f1f1;
+  --white: #ffffff;
+  --light-gray: #f1f1f1;
   --primary-color: #ff0100;
 }
 
@@ -187,6 +188,8 @@ nav {
   padding: 40px 20px 60px 20px;
   background: var(--white);
   max-width: 68.75rem;
+  /* clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%); 
+  usar para criar efeito na intro*/
 }
 
 .intro-text p {
@@ -249,7 +252,14 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 20px;
+  padding: 60px 0;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--primary-color) 50%,
+    var(--light-gray) 50%
+  );
 }
 
 .services-text {
@@ -259,21 +269,21 @@ nav {
 }
 
 .services-text p {
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.15em;
-  /* color: var(--white-); */
+  color: var(--white);
 }
 
 .services-text h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 3rem;
-  /* color: var(--white-); */
-  margin-bottom: 20px;
+  font-size: 2.7rem;
+  color: var(--white);
+  margin-bottom: 40px;
 }
 
 .services-list li img {
@@ -282,11 +292,25 @@ nav {
 
 .services-list {
   display: flex;
-  /* justify-content: space-between; */
   gap: 32px;
-  overflow-x: auto;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  overflow: auto;
+  width: 100%;
+  height: max-content;
+  transition: all 0.2s ease;
+}
+
+.services-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.services-list::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 8px;
+}
+
+.services-list::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
 }
 
 .services-list li {
@@ -294,15 +318,29 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 1;
   text-align: center;
   padding: 20px 10px;
-  width: 190px;
-  background: red;
+  min-width: 225px;
+  max-width: 225px;
+  height: 225px;
+  background: var(--white);
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
 }
 
-.services-list li h3 {
+.services-list li::after {
+  content: "";
+  width: 36px;
+  height: 4px;
+  position: absolute;
+  background: var(--primary-color);
+  bottom: 0;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.services-list .services-list li h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: var(--black);
@@ -313,6 +351,23 @@ nav {
   margin-bottom: 1.125rem;
 }
 
+.slide-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.slide-nav button {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: blue;
+  border: none;
+}
+
+.slide-nav button.active {
+  background: red;
+}
+
 /* Media Query */
 
 /* Para telas de aparelhos menores que o padrão inicial do projeto */
@@ -320,6 +375,14 @@ nav {
   .intro-text p,
   .whatsapp-list a {
     font-size: 0.7rem;
+  }
+
+  .services p {
+    font-size: 0.5rem;
+  }
+
+  .services h2 {
+    font-size: 2.2rem;
   }
 }
 
@@ -344,6 +407,25 @@ nav {
 
   .slide img {
     max-height: 600px;
+  }
+
+  .services-text p {
+    font-size: 0.7rem;
+  }
+
+  .services-text h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .services-text p {
+    font-size: 0.875rem;
+  }
+
+  .services-text h2 {
+    font-size: 4rem;
+    margin-bottom: 40px;
   }
 }
 
@@ -391,6 +473,15 @@ nav {
   .intro-text {
     padding-left: 20px;
   }
+
+  /* services */
+
+  .services-list {
+    display: grid;
+    max-width: 68.75rem;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (min-width: 1200px) {
@@ -405,5 +496,9 @@ nav {
   .slide img {
     object-fit: cover;
     max-height: 1300px;
+  }
+
+  .services-list {
+    gap: 50px;
   }
 }
