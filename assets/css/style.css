@@ -397,7 +397,7 @@ nav {
 /* Parallax */
 
 .parallax {
-  background: var(--gradient-color), url(../img/photos/parallax.jpeg),
+  background: var(--gradient-color), url(../img/photos/parallax.jpg),
     lightgray 0px -83.041px / 100% 130.833% no-repeat;
   background-size: cover;
   background-position: center;
@@ -608,6 +608,12 @@ nav {
 
   .parallax a {
     font-size: 2rem;
+    transition: all 0.4s;
+  }
+
+  .parallax a:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
   }
 }
 
