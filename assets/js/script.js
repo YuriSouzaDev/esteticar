@@ -61,7 +61,6 @@ function initChangeLogo() {
   const logoImg = document.querySelector("[data-logo]");
 
   // Faz a troca da logo depedendo do tamanho da tela
-
   function checkResizeLogo() {
     const windowWidth = window.innerWidth;
     const width = 600;
