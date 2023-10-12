@@ -86,26 +86,27 @@ initChangeLogo();
 // slide clients from swiper-slide
 
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  centeredSlides: false,
-  slidesPerGroupSkip: 1,
-  grabCursor: true,
-  keyboard: {
-    enabled: true,
-  },
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 0,
   breakpoints: {
-    769: {
+    381: {
+      spaceBetween: 0,
+    },
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
       slidesPerView: 3,
-      slidesPerGroup: 3,
+      spaceBetween: 20,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 20,
     },
   },
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  grabCursor: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
