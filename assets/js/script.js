@@ -62,9 +62,6 @@ function initChangeLogo() {
 
   // Faz a troca da logo depedendo do tamanho da tela
 
-  // if (window.matchMedia("(max-width:600px)").matches) {
-  //   logoImg.src = "./assets/img/icons/logo-2.svg";
-  // }
   function checkResizeLogo() {
     const windowWidth = window.innerWidth;
     const width = 600;
