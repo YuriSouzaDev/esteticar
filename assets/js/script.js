@@ -82,3 +82,33 @@ function initChangeLogo() {
 }
 
 initChangeLogo();
+
+// slide clients from swiper-slide
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 0,
+  breakpoints: {
+    381: {
+      spaceBetween: 0,
+    },
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
