@@ -80,8 +80,9 @@ function initChangeLogo() {
 initChangeLogo();
 
 // slide intro
-var swiper = new Swiper(".slide-container", {
-  spaceBetween: 20,
+var introSwiper = new Swiper(".mySlide", {
+  spaceBetween: 30,
+  effect: "fade",
   centeredSlides: true,
   autoplay: {
     delay: 2500,
