@@ -267,6 +267,11 @@ nav {
   max-height: 260px;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--primary-color) !important;
+}
+
 /* Services */
 
 .services {
@@ -328,6 +333,7 @@ nav {
 
 .swiper-pagination1 {
   position: unset !important;
+  transform: translateX(0) !important;
   z-index: 999;
 }
 
@@ -362,7 +368,7 @@ nav {
   margin-left: 0 !important;
 }
 
-.swiper-slide-active {
+.services-list .swiper-slide-active {
   opacity: 1;
 }
 
@@ -557,6 +563,7 @@ nav {
 
 .swiper-pagination2 {
   position: unset !important;
+  transform: translateX(0) !important;
 }
 
 .swiper-pagination-bullet {

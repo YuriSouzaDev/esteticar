@@ -79,6 +79,20 @@ function initChangeLogo() {
 
 initChangeLogo();
 
+// slide intro
+var swiper = new Swiper(".slide-container", {
+  spaceBetween: 20,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 // slide servicos
 
 var serviceSwiper = new Swiper(".myService", {
@@ -102,7 +116,7 @@ var serviceSwiper = new Swiper(".myService", {
   },
   pagination: {
     el: ".swiper-pagination1",
-    clickable: true,
+    dynamicBullets: true,
   },
 });
 
@@ -111,8 +125,6 @@ function styleLiServices() {
   const elementoService = document.querySelectorAll(
     ".services-list .swiper-slide"
   );
-
-  console.log(elementoService);
 
   elementoService.forEach((element) => {
     element.style.width = "225px";
@@ -147,6 +159,6 @@ var clientSwiper = new Swiper(".testimonial", {
   grabCursor: true,
   pagination: {
     el: ".swiper-pagination2 ",
-    clickable: true,
+    dynamicBullets: true,
   },
 });
