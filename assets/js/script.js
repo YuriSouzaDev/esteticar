@@ -79,9 +79,51 @@ function initChangeLogo() {
 
 initChangeLogo();
 
+// slide servicos
+
+var serviceSwiper = new Swiper(".myService", {
+  slidesPerView: 1,
+  centeredSlides: true,
+  spaceBetween: 0,
+  breakpoints: {
+    390: {
+      spaceBetween: 0,
+      grabCursor: true,
+    },
+    599: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 3,
+      grabCursor: false,
+      spaceBetween: 20,
+    },
+  },
+  pagination: {
+    el: ".swiper-pagination1",
+    clickable: true,
+  },
+});
+
+// Força o tamanho do style por problema de responsividade com swiperJS
+function styleLiServices() {
+  const elementoService = document.querySelectorAll(
+    ".services-list .swiper-slide"
+  );
+
+  console.log(elementoService);
+
+  elementoService.forEach((element) => {
+    element.style.width = "225px";
+  });
+}
+
+styleLiServices();
+
 // slide clients from swiper-slide
 
-var swiper = new Swiper(".mySwiper", {
+var clientSwiper = new Swiper(".testimonial", {
   slidesPerView: "auto",
   centeredSlides: true,
   spaceBetween: 0,
@@ -104,7 +146,7 @@ var swiper = new Swiper(".mySwiper", {
   },
   grabCursor: true,
   pagination: {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination2 ",
     clickable: true,
   },
 });

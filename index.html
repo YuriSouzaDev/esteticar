@@ -56,7 +56,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="slide-wrapper">
+                <div class="slide-container">
                     <div class="slide">
                         <img src="./assets/img/photos/slide-1.jpg" alt="photo slide 1">
                     </div>
@@ -71,41 +71,45 @@
             <h2>Nossos Serviços</h2>
         </div>
 
-        <ul class="services-list" data-blur>
-            <li>
-                <img src="./assets/img/icons/service-icon-1.svg" alt="Lavagem Simples">
-                <h3>Lavagem Simples</h3>
-            </li>
-            <li>
-                <img src="./assets/img/icons/service-icon-2.svg" alt="Lavagem Detalhada">
-                <h3>Lavagem Detalhada</h3>
-            </li>
-            <li>
-                <img src="./assets/img/icons/service-icon-3.svg" alt="Lavagem a seco">
-                <h3>Lavagem a seco</h3>
-            </li>
-            <li>
-                <img src="./assets/img/icons/service-icon-4.svg" alt="Higienização dos 
+
+        <ul class="services-list swiper myService" data-blur>
+            <div class="swiper-wrapper">
+                <li class="swiper-slide" style="width: 225px; height: 225px;">
+                    <img src="./assets/img/icons/service-icon-1.svg" alt="Lavagem Simples">
+                    <h3>Lavagem Simples</h3>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./assets/img/icons/service-icon-2.svg" alt="Lavagem Detalhada">
+                    <h3>Lavagem Detalhada</h3>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./assets/img/icons/service-icon-3.svg" alt="Lavagem a seco">
+                    <h3>Lavagem a seco</h3>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./assets/img/icons/service-icon-4.svg" alt="Higienização dos 
                 estofados">
-                <h3>Higienização dos estofados</h3>
-            </li>
-            <li>
-                <img src="./assets/img/icons/service-icon-5.svg" alt="Lavagem de motores">
-                <h3>Lavagem de motores</h3>
-            </li>
-            <li>
-                <img src="./assets/img/icons/service-icon-6.svg" alt="Proteção de pintura">
-                <h3>Proteção de pintura</h3>
-            </li>
-            <li>
-                <img src="./assets/img/icons/service-icon-7.svg" alt="Vetrificação dos vidros">
-                <h3>Vetrificação dos vidros</h3>
-            </li>
-            <li>
-                <img src="./assets/img/icons/service-icon-8.svg" alt="Higienização e Hidratação de couros">
-                <h3>Higienização e Hidratação de couros</h3>
-            </li>
+                    <h3>Higienização dos estofados</h3>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./assets/img/icons/service-icon-5.svg" alt="Lavagem de motores">
+                    <h3>Lavagem de motores</h3>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./assets/img/icons/service-icon-6.svg" alt="Proteção de pintura">
+                    <h3>Proteção de pintura</h3>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./assets/img/icons/service-icon-7.svg" alt="Vetrificação dos vidros">
+                    <h3>Vetrificação dos vidros</h3>
+                </li>
+                <li class="swiper-slide">
+                    <img src="./assets/img/icons/service-icon-8.svg" alt="Higienização e Hidratação de couros">
+                    <h3>Higienização e Hidratação de couros</h3>
+                </li>
+            </div>
         </ul>
+        <div class="swiper-pagination swiper-pagination1"></div>
     </section>
 
     <section class="parallax">
@@ -120,7 +124,7 @@
             <p>o que nossos clientes dizem</p>
             <h2>Nossos Clientes</h2>
         </div>
-        <ul class="testimonial swiper mySwiper" data-testimonial>
+        <ul class="testimonial swiper" data-testimonial>
             <div class="swiper-wrapper">
                 <li class="testimonial-item swiper-slide" data-test-item>
                     <div class="avatar">
@@ -214,7 +218,7 @@
                 </li>
             </div>
         </ul>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination swiper-pagination2"></div>
     </section>
 
     <section class="contato">
@@ -263,7 +267,7 @@
         <p>Desenvolvido por Yuri Souza</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script defer src="./assets/js/script.js"></script>
 
 </body>
