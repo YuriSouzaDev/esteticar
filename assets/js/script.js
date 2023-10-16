@@ -11,6 +11,16 @@ function initMenuHamburger() {
     }
   });
 
+  function closeMenu(e) {
+    e.preventDefault();
+    menuHamburger.classList.remove("active");
+    menuNav.classList.remove("active");
+  }
+
+  linksIntenos.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
   function openMenu() {
     menuNav.classList.toggle("active");
     menuHamburger.classList.toggle("active");
