@@ -187,6 +187,7 @@ nav {
 
 .intro-bg {
   background: var(--white);
+  position: relative;
 }
 
 .intro {
@@ -270,6 +271,30 @@ nav {
 .swiper-button-prev,
 .swiper-button-next {
   color: var(--primary-color) !important;
+}
+
+/* back-to-top */
+.back-to-top {
+  border: 2px solid var(--primary-color);
+  height: 40px;
+  width: 40px;
+  bottom: 0;
+  right: 20px;
+  border-radius: 50%;
+  z-index: 997;
+  position: fixed;
+  opacity: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+}
+
+.back-to-top.ativo {
+  bottom: 40px;
+  opacity: 1;
 }
 
 /* Services */
@@ -952,6 +977,12 @@ nav {
 
   .intro-text h1 {
     max-width: max-content;
+  }
+
+  .back-to-top {
+    height: 60px;
+    width: 60px;
+    right: 120px;
   }
 
   .slide img {
